@@ -30,7 +30,6 @@ vim.lsp.diagnostic.clear = function(bufnr, client_id, diagnostic_ns, sign_ns)
 
   -- clear virtual text namespace
   api.nvim_buf_clear_namespace(bufnr, diagnostic_ns, 0, -1)
-
 end
 
 vim.lsp.diagnostic.set_signs = function(diagnostics, bufnr, _, _, _)
