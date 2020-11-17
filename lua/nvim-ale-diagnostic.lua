@@ -6,9 +6,6 @@ local ale_diagnostic_severity_map = {
 }
 
 local orginal_clear = vim.lsp.diagnostic.clear
-
--- Mostly copied from Neovim's implementation:
--- https://github.com/neovim/neovim/blob/master/runtime/lua/vim/lsp/diagnostic.lua#L778-L801
 vim.lsp.diagnostic.clear = function(bufnr, client_id, diagnostic_ns, sign_ns)
   orginal_clear(bufnr, client_id, diagnostic_ns, sign_ns)
   -- Clear ALE
