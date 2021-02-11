@@ -19,9 +19,11 @@ packadd nvim-ale-diagnostic
 " or your favorite package manager here
 ```
 
-Then, put the following in a Lua file at `nvim/lua/lsp-ale-diagnostic/init.lua`:
+Then, put the following in a Lua file at `nvim/lua/lsp/init.lua`:
 
 ```lua
+require("nvim-ale-diagnostic")
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = false,
@@ -32,11 +34,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 ```
 
-Then source it from your `init.vim` file:
-
-```
-lua require("nvim-ale-diagnostic")
-```
+For an example of this in action, check out [my dotfiles](https://github.com/nathunsmitty/.config/blob/main/nvim/lua/lsp/init.lua).
 
 ## Notes
 
