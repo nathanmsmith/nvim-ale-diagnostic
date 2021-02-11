@@ -35,7 +35,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 Then source it from your `init.vim` file:
 
 ```
-lua require("lsp-ale-diagnostic")
+lua require("nvim-ale-diagnostic")
 ```
 
 ## Notes
