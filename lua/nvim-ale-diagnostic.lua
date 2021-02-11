@@ -5,9 +5,9 @@ local ale_diagnostic_severity_map = {
   [vim.lsp.protocol.DiagnosticSeverity.Hint] = "H";
 }
 
-local orginal_clear = vim.lsp.diagnostic.clear
+vim.lsp.diagnostic.original_clear = vim.lsp.diagnostic.clear
 vim.lsp.diagnostic.clear = function(bufnr, client_id, diagnostic_ns, sign_ns)
-  orginal_clear(bufnr, client_id, diagnostic_ns, sign_ns)
+  vim.lsp.diagnostic.original_clear(bufnr, client_id, diagnostic_ns, sign_ns)
   -- Clear ALE
   vim.api.nvim_call_function('ale#other_source#ShowResults', {bufnr, "nvim-lsp", {}})
 end
