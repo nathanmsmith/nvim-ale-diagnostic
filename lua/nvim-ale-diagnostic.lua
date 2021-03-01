@@ -2,7 +2,7 @@ local ale_diagnostic_severity_map = {
   [vim.lsp.protocol.DiagnosticSeverity.Error] = "E";
   [vim.lsp.protocol.DiagnosticSeverity.Warning] = "W";
   [vim.lsp.protocol.DiagnosticSeverity.Information] = "I";
-  [vim.lsp.protocol.DiagnosticSeverity.Hint] = "H";
+  [vim.lsp.protocol.DiagnosticSeverity.Hint] = "I";
 }
 
 vim.lsp.diagnostic.original_clear = vim.lsp.diagnostic.clear
