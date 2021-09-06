@@ -12,7 +12,7 @@ Routes Neovim LSP diagnostics to ALE for display. Useful if you like to manage a
 ```
 Plug 'nathunsmitty/nvim-ale-diagnostic'
 " or, if you use a Vim 8 package manager
-call packager#add('nathunsmitty/nvim-ale-diagnostic', {'type': 'opt'})
+call packager#add('nathanmsmith/nvim-ale-diagnostic', {'type': 'opt'})
 packadd nvim-ale-diagnostic
 " or your favorite package manager here
 " ...
