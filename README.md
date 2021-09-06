@@ -10,7 +10,7 @@ Routes Neovim LSP diagnostics to ALE for display. Useful if you like to manage a
 ## Installation
 
 ```
-Plug 'nathunsmitty/nvim-ale-diagnostic'
+Plug 'nathanmsmith/nvim-ale-diagnostic'
 " or, if you use a Vim 8 package manager
 call packager#add('nathanmsmith/nvim-ale-diagnostic', {'type': 'opt'})
 packadd nvim-ale-diagnostic
