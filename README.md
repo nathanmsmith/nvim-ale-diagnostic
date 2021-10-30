@@ -35,8 +35,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 ```
 
-For an example of this in action, check out [my dotfiles](https://github.com/nathunsmitty/.config/blob/main/nvim/lua/lsp/init.lua).
-
 ## Notes
 
 - `underline` and `virtual_text` are configurable, but you should probably disable them and configure those features through ALE.
