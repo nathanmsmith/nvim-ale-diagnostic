@@ -28,7 +28,7 @@ if vim.version().api_level == 8 then
         text = item.message,
         lnum = item.lnum+1,
         end_lnum = item.end_lnum,
-        col = item.col,
+        col = item.col+1,
         end_col = item.end_col,
         type = ale_diagnostic_severity_map[item.severity]
       })
