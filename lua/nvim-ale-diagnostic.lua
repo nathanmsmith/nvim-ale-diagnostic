@@ -10,6 +10,7 @@ vim.lsp.diagnostic.clear = function(bufnr, client_id, diagnostic_ns, sign_ns)
   vim.lsp.diagnostic.original_clear(bufnr, client_id, diagnostic_ns, sign_ns)
   -- Clear ALE
   vim.api.nvim_call_function('ale#other_source#ShowResults', {bufnr, "nvim-lsp", {}})
+  vim.b[bufnr].prev_nvim_lsp_diagnostics = nil
 end
 
 if vim.version().api_level == 8 then
@@ -34,7 +35,14 @@ if vim.version().api_level == 8 then
       })
     end
 
-    vim.api.nvim_call_function('ale#other_source#ShowResults', {bufnr, "nvim-lsp", items})
+    -- Only call `ShowResults` if the diagnostics have actually changed
+    if not vim.deep_equal(vim.b[bufnr].prev_nvim_lsp_diagnostics, items) then
+      vim.api.nvim_call_function(
+        'ale#other_source#ShowResults',
+        {bufnr, "nvim-lsp", items}
+      )
+      vim.b[bufnr].prev_nvim_lsp_diagnostics = items
+    end
   end
 
   function vim.diagnostic.show(namespace, bufnr, ...)
@@ -62,4 +70,3 @@ else
     vim.api.nvim_call_function('ale#other_source#ShowResults', {bufnr, "nvim-lsp", items})
   end
 end
-
