@@ -1,5 +1,7 @@
 # nvim-ale-diagnostic
 
+> ⚠️ **Deprecated**: I've since moved to using Neovim's built-in diagnostics with [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim) instead of ALE and no longer have the time to maintain this plugin. Please feel free to fork this repo if you still find it useful!
+
 Routes Neovim LSP diagnostics to ALE for display. Useful if you like to manage all your errors in the same way.
 
 ## Requirements
